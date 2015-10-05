@@ -1,0 +1,8 @@
+src/*.o
+src/*.a
+src/*.so
+src/filtertool
+doxygen_filtertool/
+*~
+*#
+*.DS_Store
