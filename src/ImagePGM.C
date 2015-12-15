@@ -61,11 +61,13 @@ ImagePGM ImagePGM::sobel(int threshold) {
 					+ sobely[2][1] * _matrix[getIndex(i, j + 1)]
 					+ sobely[2][2] * _matrix[getIndex(i + 1, j + 1)]);
             g = sqrt(gx * gx + gy * gy);
-            //			if (g > threshold) {
-            //				tmp = 255;
-            //			} else {
-            //				tmp = 0;
-            //			}
+            //uncomment this to see a binary image (black and white)
+            /*if (g > threshold) {
+            	tmp = 255;
+            } else {
+            	tmp = 0;
+            }*/
+            //comment this to see a grayscaled image
             tmp = g/8;
             newTab[getIndex(i, j)] = tmp;
         }

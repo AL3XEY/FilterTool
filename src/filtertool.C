@@ -21,7 +21,7 @@ int main(int argc, char* argv[]) {
     if (argc==3) {
         filename = argv[argc - 1];
 
-        threshold="120";
+        threshold=(char *)"120";
     }else if(argc == 1){
         cerr<<"No file found"<<endl;
         cerr << "Usage:\n" << argv[0] << " [-s] file threshold\n or \nUsage:\n" << argv[0] << " [-s] file"<<endl;

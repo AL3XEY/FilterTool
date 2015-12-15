@@ -1,6 +1,7 @@
 all :  filtertool
 
-libraries: libfiltertool.a libfiltertool.so 
+libraries: libfiltertool.a libfiltertool.so
+	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/etu/fauchera1/Bureau/TSI/FilterTool
 
 Image.o : Image.h Image.C
 	c++ -c Image.C -fPIC
@@ -24,4 +25,4 @@ filtertool : filtertool.o libfiltertool.so
 	 c++ -fPIC filtertool.o -L. -lfiltertool -o filtertool 
 
 clean :
-	rm -f *.o  filtertool *~
+	rm -f *.o  filtertool *~ libfiltertool.a libfiltertool.so
