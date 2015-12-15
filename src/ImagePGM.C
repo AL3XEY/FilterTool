@@ -75,3 +75,29 @@ ImagePGM ImagePGM::sobel(int threshold) {
 	ImagePGM img(_width, _height, newTab);
 	return img;
 }
+
+ImagePGM ImagePGM::mean() {
+	int g;
+	byte newTab[_size];
+	byte tmp;
+
+	for (int i = 1; i < _width - 1; i++) {
+		for (int j = 1; j < _height - 1; j++) {
+			g = ( _matrix[getIndex(i - 1, j - 1)]
+					+  _matrix[getIndex(i, j - 1)]
+					+  _matrix[getIndex(i + 1, j - 1)]
+					+  _matrix[getIndex(i - 1, j)]
+					+  _matrix[getIndex(i, j)]
+					+  _matrix[getIndex(i + 1, j)]
+					+  _matrix[getIndex(i - 1, j + 1)]
+					+  _matrix[getIndex(i, j + 1)]
+					+  _matrix[getIndex(i + 1, j + 1)]);
+
+            	tmp = g/9;
+            	newTab[getIndex(i, j)] = tmp;
+        	}
+	}
+	ImagePGM img(_width, _height, newTab);
+
+	return img;
+}
