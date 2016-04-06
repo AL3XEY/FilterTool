@@ -67,8 +67,9 @@ ImagePGM ImagePGM::sobel(int threshold) {
             } else {
             	tmp = 0;
             }*/
-            //comment this to see a grayscaled image
+            //uncomment this to see a grayscaled image
             tmp = g/8;
+            
             newTab[getIndex(i, j)] = tmp;
         }
 	}
